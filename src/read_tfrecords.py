@@ -1,7 +1,4 @@
-﻿import os
 import tensorflow as tf
-import matplotlib.pyplot as plt
-import numpy as np
 
 def read_and_decode(filename, n_classes, batch_size):
     filename_queue = tf.train.string_input_producer([filename])

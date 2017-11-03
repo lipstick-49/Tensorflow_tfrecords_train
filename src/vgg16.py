@@ -145,5 +145,3 @@ def vgg16(images, classes):
         fc3l = tf.nn.bias_add(tf.matmul(fc2, fc3w), fc3b)
 
     return fc3l
-
-

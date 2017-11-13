@@ -1,7 +1,7 @@
 import tensorflow as tf
 import numpy as np
 import os
-import model
+import Net
 import read_tfrecords
 import vgg16
 
@@ -14,7 +14,7 @@ val_batch, val_label_batch = read_tfrecords.read_and_decode('tfrecords/val.tfrec
 X = tf.placeholder(dtype=tf.float32, shape=[None, 224, 224, 3])
 Y = tf.placeholder(dtype=tf.int64, shape=[None, 21])
 
-logits = model._new(X, 21)
+logits = Net._new(X, 21)
 # logits = vgg16.vgg16(X, 21)
 
 loss = tf.reduce_mean(tf.nn.softmax_cross_entropy_with_logits(labels=Y,logits=logits))

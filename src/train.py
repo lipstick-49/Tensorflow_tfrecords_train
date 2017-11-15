@@ -44,8 +44,8 @@ with tf.Session() as sess:
             train_writer.add_summary(summary_str, step)
             val_writer.add_summary(summary_str, step)
 
-        checkpoint_path = os.path.join(logs_train_dir, 'model.ckpt')
-        saver.save(sess, checkpoint_path, global_step=step)
+    checkpoint_path = os.path.join(logs_train_dir, 'model.ckpt')
+    saver.save(sess, checkpoint_path, global_step=step)
         
     coord.request_stop()
     coord.join(threads)
